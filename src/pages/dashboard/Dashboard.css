@@ -1,0 +1,5 @@
+.main--container{
+    display: flex;
+    height: calc(100vh - 75px);
+    width: 100%;
+}

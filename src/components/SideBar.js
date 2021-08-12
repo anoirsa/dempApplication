@@ -9,18 +9,18 @@ import DashMenu from './DashMenu';
 
 
 const Container = styled.div`
-    height: calc(100vh - 75px);
-    width: 55px;
-    background-color:#001555;
+    
+    height: 100%;
+    width: ${({primary}) => (primary ? '357px' : '55px')};;
     border-radius:2px;
     position: sticky;
     overflow-x: visible;
-    padding-bottom: 5px;
+    transition: all 250ms ease-out;
    
 `;
 
 const Wrapper = styled.div`
-    width: 100%;
+    width: 55px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -28,6 +28,7 @@ const Wrapper = styled.div`
     padding-bottom: 10px;
     align-items:center;
     overflow-x: visible;
+    background-color:#001555;
     gap:5px;
     position: relative;
 
@@ -74,11 +75,10 @@ const DashMenu = styled.div`
 
 **/
 
-const SideBar = () => {
-    const [showMenu, setShowMenu] = useState(false);
-
+const SideBar = ({showMenu,setShowMenu}) => {
+    
     return (
-        <Container>
+        <Container primary={showMenu}>
             <Wrapper>
                 <DashMenu
                     cName = {showMenu ? 'main-container active' :'main-container'} 

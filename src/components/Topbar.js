@@ -7,7 +7,7 @@ import Kandralogo from './images/klablogo.png';
 
 const Container = styled.div`
     position: sticky;
-    width: 70px;
+    height: 70px;
     width: 100%;
     display: flex;
     padding:10px;

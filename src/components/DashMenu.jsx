@@ -2,6 +2,8 @@ import React from 'react'
 import './DashMenu.css';
 import styled, { css } from 'styled-components/macro'
 import { Link } from 'react-router-dom';
+import {Dashboard as Dash} from '@material-ui/icons';
+import {List} from '@material-ui/icons';
 
 const UserProfileBox = styled.div`
     width: 100%;
@@ -95,9 +97,18 @@ const MenuSection = styled.div`
     .link--item {
         text-decoration:none;
         color:#7A838C;
-
-
-    }
+     }
+    .item--header {
+        position: relative;
+        display: flex;
+        gap:10px;
+        justify-content: flex-start;
+        align-items: flex-start;
+     }
+     .icon {
+         margin-top:5px;
+        
+     }
 
 `;
 
@@ -118,7 +129,10 @@ const DashMenu = ({ cName }) => {
             <MenuContainer>
                 <MenuContainerWrapper>
                     <MenuSection>
+                    <div className="item--header">
+                        <Dash className="icon" />
                     <h4>DASHBOARD</h4>
+                    </div>
                     <Link className="link--item">
                         Home
                     </Link>
@@ -127,7 +141,10 @@ const DashMenu = ({ cName }) => {
                     </Link>
                     </MenuSection>
                     <MenuSection>
-                    <h4>QuickMenu</h4>
+                    <div className="item--header">
+                        <List className="icon" />
+                    <h4>Quick Menu</h4>
+                     </div>
                     <Link className="link--item">
                         Users
                     </Link>
