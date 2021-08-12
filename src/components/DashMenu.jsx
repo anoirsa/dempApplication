@@ -63,6 +63,41 @@ const StatusContainer = styled.div`
 `;
 
 const MenuContainer = styled.div`
+    padding: 3rem 2rem;
+    width:100%;
+    height: calc(100% - 68px);
+    
+
+`;
+
+const MenuContainerWrapper = styled.div`
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap:20px;
+`;
+
+const MenuSection = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    h4 {
+        font-size: 1.5rem;
+        color : #ED8C00;
+        margin-bottom: 10px;
+        font-weight: 400;
+    }
+    .link--item {
+        text-decoration:none;
+        color:#7A838C;
+
+
+    }
 
 `;
 
@@ -81,8 +116,29 @@ const DashMenu = ({ cName }) => {
             </UserProfileBox>
 
             <MenuContainer>
-
-                
+                <MenuContainerWrapper>
+                    <MenuSection>
+                    <h4>DASHBOARD</h4>
+                    <Link className="link--item">
+                        Home
+                    </Link>
+                    <Link className="link--item">
+                       Announcements
+                    </Link>
+                    </MenuSection>
+                    <MenuSection>
+                    <h4>QuickMenu</h4>
+                    <Link className="link--item">
+                        Users
+                    </Link>
+                    <Link className="link--item">
+                       Ai Model
+                    </Link>
+                    <Link className="link--item">
+                       BankEnergi
+                    </Link>
+                    </MenuSection>
+                </MenuContainerWrapper>
             </MenuContainer>
 
 
