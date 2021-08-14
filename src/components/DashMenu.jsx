@@ -3,7 +3,7 @@ import './DashMenu.css';
 import styled, { css } from 'styled-components/macro'
 import { Link } from 'react-router-dom';
 import {Dashboard as Dash} from '@material-ui/icons';
-import {List} from '@material-ui/icons';
+import {List, Work,CropLandscape} from '@material-ui/icons';
 
 const UserProfileBox = styled.div`
     width: 100%;
@@ -97,6 +97,13 @@ const MenuSection = styled.div`
     .link--item {
         text-decoration:none;
         color:#7A838C;
+        width: 100%;
+        padding: 5px;
+        border-radius: 3px;
+
+        &:hover {
+            background: #E9CDCD;
+        }
      }
     .item--header {
         position: relative;
@@ -129,31 +136,54 @@ const DashMenu = ({ cName }) => {
             <MenuContainer>
                 <MenuContainerWrapper>
                     <MenuSection>
-                    <div className="item--header">
-                        <Dash className="icon" />
-                    <h4>DASHBOARD</h4>
-                    </div>
-                    <Link className="link--item">
-                        Home
+                        <div className="item--header">
+                            <Dash className="icon" />
+                            <h4>DASHBOARD</h4>
+                        </div>
+                        <Link className="link--item">
+                            Home
                     </Link>
-                    <Link className="link--item">
-                       Announcements
+                        <Link className="link--item">
+                            Announcements
                     </Link>
                     </MenuSection>
                     <MenuSection>
-                    <div className="item--header">
-                        <List className="icon" />
-                    <h4>Quick Menu</h4>
-                     </div>
-                    <Link className="link--item">
-                        Users
+                        <div className="item--header">
+                            <List className="icon" />
+                            <h4>Quick Menu</h4>
+                        </div>
+                        <Link className="link--item">
+                            Users
                     </Link>
-                    <Link className="link--item">
-                       Ai Model
+                        <Link className="link--item">
+                            Ai Model
                     </Link>
-                    <Link className="link--item">
-                       BankEnergi
+                        <Link className="link--item">
+                            BankEnergi
                     </Link>
+                    </MenuSection>
+                    <MenuSection>
+                        <div className="item--header">
+                            <Work className="icon" />
+                            <h4>Organize</h4>
+                        </div>
+                        <Link className="link--item">
+                            Workspace
+                    </Link>
+
+                    </MenuSection>
+                    <MenuSection>
+                        <div className="item--header">
+                            <CropLandscape className="icon" />
+                            <h4>Integrate</h4>
+                        </div>
+                        <Link className="link--item">
+                            Flows
+                    </Link>
+                        <Link className="link--item">
+                            Topics
+                    </Link>
+
                     </MenuSection>
                 </MenuContainerWrapper>
             </MenuContainer>

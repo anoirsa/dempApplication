@@ -34,6 +34,7 @@ const Wrapper = styled.div`
 
     .icon--link {
         text-decoration: none;
+        
     }
     .menu-icon {
         margin-top:10px;

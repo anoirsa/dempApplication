@@ -1,8 +1,10 @@
 import React from 'react';
 import styled,{css} from 'styled-components/macro';
-import LogoImage from './images/klablogo.png'
+import { motion } from 'framer-motion';
+import LogoImage from '../images/klablogo.png'
 import {Link} from 'react-router-dom';
-import GoogleIcon from './images/googleIcon.svg';
+import GoogleIcon from '../images/googleIcon.svg';
+import { customSignGoogle } from '../SharedStyles';
 const Container = styled.div`
     width: 100%;
     height: 100vh;
@@ -19,7 +21,7 @@ const Wrapper = styled.div`
 
 
 `
-const Box = styled.div`
+const Box = styled(motion.div)`
     display:flex;
     padding: 10px;
     flex-direction: column;
@@ -29,7 +31,7 @@ const Box = styled.div`
 
     
 `
-const Logo = styled.img`
+const Logo = styled(motion.img)`
     width: 450px;
     object-fit: contain;
     height: 65px;
@@ -37,25 +39,7 @@ const Logo = styled.img`
 `;
 
 const SignGoogleButton = styled.div`
-    padding: 5px 30px;
-    border-radius: 3px;
-    gap : 5px;
-    border : 1px solid #7A838C;
-    display: flex;
-    cursor: pointer;
-    h4 {
-        font-size: 24px;
-        color: #D8D8D8;
-        font-weight: 300;
-
-    }
-
-    &:hover {
-        background: #ED9400;
-        transform: translateY(-1px) scale(1.03);
-        transition: all 500ms ease-out;
-        
-    }
+    ${customSignGoogle}
 `;
 
 const customInputStyle = css`
@@ -86,7 +70,7 @@ const InputPassword = styled.input`
 `;
 
 
-const LoginSection = styled.div`
+const LoginSection = styled(motion.div)`
     display: flex;
     flex-direction: column;
     padding: 10px 40px;
@@ -151,17 +135,22 @@ const Login = () => {
     return (
         <Container>
             <Wrapper>
-                <Box>
+                <Box
+                    initial={{opacity : 0, y:-200}}
+                    animate={{opacity : 1, y:0,transition:{duration : 0.8}}}
+                >
                     <Logo
-                        src={LogoImage}
-                    />
+                        src={LogoImage}/>
                     <SignGoogleButton>
                 <img src={GoogleIcon} />
                 <h4>Sign in with google</h4>
                     </SignGoogleButton>
                 </Box>
                 <hr/>
-                <LoginSection>
+                <LoginSection
+                    initial={{opacity : 0, x:-200}}
+                    animate={{opacity : 1, x:0,transition:{duration : 0.8,delay:0.8}}}
+                >
                     <LoginFields>
                         <InputEmail
                              placeholder="Email"
