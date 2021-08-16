@@ -64,11 +64,11 @@ const BankEnergi = () => {
         freqElexonExported, solarExported,
         transmitElexonExported, windOffShoreExported,
         windOnShoreExported, priceElexonExported } = Infos();
-
-    const [{ carbonData,
+    
+    const [{ carbonDataI,
         elexonData,elexonPriceData,elexonFreqData, elexonTransmitData,solarData,
         tempData, windData }, dispatch] = useReducer(reducer, {
-            carbonData: { graphIndex: 0 },
+            carbonDataI: { graphIndex: 1 },
             elexonData: { graphIndex: 0 },
             elexonPriceData: { graphIndex: 0 },
             elexonFreqData : {graphIndex: 0},
@@ -77,10 +77,29 @@ const BankEnergi = () => {
             windData: { graphIndex: 0 },
             tempData: { graphIndex: 0 }
         })
-    const dati = elexonDataExported
+
     return (
         <div className="main--bankcontainer">
             <Row>
+            <CarbonData>
+                <div className="arrows--container">
+                        <IoArrowBack className="botton--change" onClick={() => dispatch({ type: 'carbonPrev' })} />
+                        <IoArrowForward className="botton--change" onClick={() => dispatch({ type: 'carbonNext' })} />
+                    </div>
+                    <div className="title--container">
+                        <h4>Carbon Intensity</h4>
+                    </div>
+                    <GraphedData
+                        graphId={carbonDataI.graphIndex}
+                        dataGiven={carbonExported}
+                        keysAndUnits={getKeysAndUnits('carbon')}
+                    />
+                    <Analysis
+                        dataGiven={carbonExported}
+                        dataType='carbon'
+                    />
+
+                </CarbonData>
                 <Elexon>
                     <div className="arrows--container">
                         <IoArrowBack className="botton--change" onClick={() => dispatch({ type: 'elexonPrev' })} />
@@ -91,14 +110,15 @@ const BankEnergi = () => {
                     </div>
                     <GraphedData
                         graphId={elexonData.graphIndex}
-                        dataGiven={dati}
+                        dataGiven={elexonDataExported}
                         keysAndUnits={getKeysAndUnits('elexon')}
                     />
                     <Analysis
-                        dataGiven={dati}
+                        dataGiven={elexonDataExported}
                         dataType='elexon'
                     />
                 </Elexon>
+              
             </Row>
 
         </div>

@@ -13,16 +13,19 @@ export const getKeysAndUnits = (string) => {
             returnedObj.labelX = "Time in GMT"
             returnedObj.labelY = "Carbon Intensity (gCO2/kWh) "
             returnedObj.dataKeyTwo = "Intensity"
+            break;
         case 'wind':
             returnedObj.dataKeyOne = "period"
             returnedObj.labelX = "Time in GMT"
             returnedObj.labelY = "Wind Energy (MW)"
             returnedObj.dataKeyTwo = "quantitysettlementDate"
+            break;
         case 'solar':
             returnedObj.dataKeyOne = "Time1"
             returnedObj.dataKeyTwo = "generation_mv"
             returnedObj.labelX = "(MW)"
             returnedObj.labelY = "(GMT)"
+            break;
         case 'energytransmit':
             returnedObj.dataKeyOne = "date"
             returnedObj.dataKeyTwo = "volume"
@@ -34,16 +37,19 @@ export const getKeysAndUnits = (string) => {
             returnedObj.dataKeyTwo = "price"
             returnedObj.labelX = "Price (£/MWh)"
             returnedObj.labelY = "Time in GMT"
+            break;
         case 'energyfrequency':
             returnedObj.dataKeyOne = "time"
             returnedObj.dataKeyTwo = "frequency"
             returnedObj.labelX = "Frequency (Hz)"
             returnedObj.labelY = "Time in GMT"
+            break;
         case 'energyproduction':
             returnedObj.dataKeyOne = "date"
             returnedObj.dataKeyTwo = "nuclear"
             returnedObj.labelX = "Energy (MW)"
             returnedObj.lebelY = "Time in GMT"
+            break;
 
 
         default:

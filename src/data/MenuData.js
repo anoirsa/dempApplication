@@ -46,12 +46,13 @@ export const reducer = (state, action) => {
                 elexonTransmitData: { ...state.elexonTransmitData, graphIndex: state.elexonTransmitData.graphIndex == 0 ? 3 : state.elexonTransmitData.graphIndex - 1 }
             }
         case 'carbonNext':
+            console.log("Executed")
             return {
-                carbonData: { ...state.carbonData, graphIndex: state.carbonData.graphIndex == 3 ? 0 : state.carbonData.graphIndex + 1 }
+                carbonDataI: { ...state.carbonDataI, graphIndex: state.carbonDataI.graphIndex == 3 ? 0 : state.carbonDataI.graphIndex + 1 }
             }
         case 'carbonPrev':
             return {
-                carbonData: { ...state.carbonData, graphIndex: state.carbonData.graphIndex == 0 ? 3 : state.carbonData.graphIndex - 1 }
+                carbonDataI: { ...state.carbonDataI, graphIndex: state.carbonDataI.graphIndex == 0 ? 3 : state.carbonDataI.graphIndex - 1 }
             }
         case 'tempNext':
             return {
