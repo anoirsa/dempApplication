@@ -7,8 +7,11 @@ import MainContentContainer from '../../components/MainContentContainer';
 
 const Dashboard = () => {
     const [showMenu,setShowMenu] = useState(false);
+    const DashContainer = styled.div`
+        overflow-x: auto;
+    `; 
     return (
-        <div>
+        <div className="dash--container">
             <Topbar />
             
             <div className="main--container">

@@ -140,7 +140,7 @@ const DashMenu = ({ cName }) => {
                             <Dash className="icon" />
                             <h4>DASHBOARD</h4>
                         </div>
-                        <Link className="link--item">
+                        <Link className="link--item" to="/">
                             Home
                     </Link>
                         <Link className="link--item">
@@ -158,8 +158,8 @@ const DashMenu = ({ cName }) => {
                         <Link className="link--item">
                             Ai Model
                     </Link>
-                        <Link className="link--item">
-                            BankEnergi
+                        <Link className="link--item" to="/visual_data">
+                        Data visualization
                     </Link>
                     </MenuSection>
                     <MenuSection>

@@ -5,6 +5,7 @@ import styled ,{css} from 'styled-components/macro'
 const Container = styled.div`
     width: 100%;
     height: 100%;
+    min-height: 600px;
 `;
 
 
@@ -25,6 +26,7 @@ const TopSectionWrapper = styled.div`
 
 const ContentBox = styled.div`
     height: 20vh;
+    min-height: 100px;
     padding: 5px 20px;
     display: flex;
     flex-direction: column;

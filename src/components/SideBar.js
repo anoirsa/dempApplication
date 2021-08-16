@@ -11,7 +11,6 @@ import DashMenu from './DashMenu';
 const Container = styled.div`
     
     height: 100%;
-    width: ${({primary}) => (primary ? '357px' : '55px')};;
     border-radius:2px;
     position: sticky;
     overflow-x: visible;
@@ -76,10 +75,13 @@ const DashMenu = styled.div`
 
 **/
 
+
+
 const SideBar = ({showMenu,setShowMenu}) => {
-    
+    const menuNoShows = {width :'55px',transition:'all 650ms ease-out'};
+    const menuShown = {width :'357px',transition:'all 650ms ease-out'};
     return (
-        <Container primary={showMenu}>
+        <Container style={showMenu ? menuShown : menuNoShows}>
             <Wrapper>
                 <DashMenu
                     cName = {showMenu ? 'main-container active' :'main-container'} 

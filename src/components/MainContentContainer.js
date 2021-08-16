@@ -1,11 +1,13 @@
 import React , {useState}from 'react'
 import styled ,{css} from 'styled-components/macro'
-import {Link} from 'react-router-dom';
+import {Link, Switch, Route, Router} from 'react-router-dom';
 import Home from '../pages/dashPages/Home';
+import BankEnergi from '../pages/dashPages/bankenergi/BankEnergi';
 
 
 const Container = styled.div`
     height : 100%;
+    min-height: 600px;
     width: ${({primary}) => (primary ? 'calc(100% - 360px)' : 'calc(100% - 55px)')};;
     border: 2.5px solid #7A838C;
     border-radius: 3px;
@@ -18,7 +20,10 @@ const MainContentContainer = ({showMenu}) => {
     return (
         <Container
             primary={showMenu}>
-                <Home />
+           <Switch>
+               <Route path="/"  component={Home} exact/>
+               <Route path="/visual_data" component={BankEnergi} exact />
+           </Switch>
           
         </Container>
     )

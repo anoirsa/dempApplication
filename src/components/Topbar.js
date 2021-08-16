@@ -14,6 +14,7 @@ const Container = styled.div`
     justify-content:flex-start;
     align-items: center;
     margin-bottom: 5px;
+    min-width: 1000px;
 `;
 
 const Wrapper = styled.div`

@@ -1,0 +1,14 @@
+const reducer = (state, action) => {
+    switch(action.type) {
+        case 'add-todo' : 
+            return {todos : [...state.todos, {text : action.text, completed : false}]}
+        case 'decrement' :
+            return state - 1;
+        default :
+            return state       
+    }
+
+}
+
+
+ const [{todos,org}, dispatch] = useReducer(reducer, {todos : [{text : 'random',completed : false}],org : [{mac : 'terror'}]})
